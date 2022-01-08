@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 struct ActiveDeviceList: View {
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State var activeLights: [Light] = [Light]()
     @State var openBlinds: [Blind] = [Blind]()
     @State var manualDevices: [TempDevice] = [TempDevice]()

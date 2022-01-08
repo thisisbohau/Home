@@ -37,7 +37,7 @@ struct RoomTagRoom: View{
 struct RoomTagSetup: View {
     @StateObject var nfc = NFCReader()
     @StateObject var nfcProgrammer = NFCProgrammer()
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
 
     func programTag(){
         nfcProgrammer.startScanning()

@@ -10,7 +10,7 @@ import SwiftUI
 struct WakeUpSettings: View {
     @Binding var active: Bool
     @ObservedObject var locationServices = LocationService()
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State var wakeUpTime: Date = Date()
     @State var arrivalTime: Date = Date()
     @State var showNewDestination: Bool = false
@@ -29,8 +29,10 @@ struct WakeUpSettings: View {
     }
     
     func set(){
-        MorningKit().setRoutine(destination: destination, arrivalTime: arrivalTime, wakeUpTime: wakeUpTime)
+        Task{
+        let _ = await MorningKit().setRoutine(destination: destination, arrivalTime: arrivalTime, wakeUpTime: wakeUpTime)
         active = false
+        }
     }
     
     var body: some View {

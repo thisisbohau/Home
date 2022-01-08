@@ -40,7 +40,7 @@ extension UIViewController {
 }
 
 struct NotificationList: View {
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     
     var body: some View {
         VStack(alignment: .leading){

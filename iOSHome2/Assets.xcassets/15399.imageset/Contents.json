@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone"
+    },
+    {
+      "idiom" : "ipad"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

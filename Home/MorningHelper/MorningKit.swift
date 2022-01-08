@@ -23,7 +23,7 @@ class MorningKit: ObservableObject{
 //
 //    }
     func calculateRoute(destination: LocationDestination, completion: @escaping(MKRoute) -> Void){
-        let region = GeoKit().getLastKnownLocation()
+        let region = LocationControl().getHomeGeofence().center
         let p1 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: region.latitude, longitude: region.longitude))
         let p2 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: destination.latitude, longitude: destination.longitude))
         
@@ -62,30 +62,34 @@ class MorningKit: ObservableObject{
          return string
     }
     
-    func setRoutine(destination: LocationDestination, arrivalTime: Date, wakeUpTime: Date){
+    func setRoutine(destination: LocationDestination, arrivalTime: Date, wakeUpTime: Date) async{
         var queries = [URLQueryItem]()
         queries.append(URLQueryItem(name: "action", value: "setRoutine"))
         queries.append(URLQueryItem(name: "wakeUpTime", value: dateToString(date: wakeUpTime)))
         queries.append(URLQueryItem(name: "arrivingTime", value: dateToString(date: arrivalTime)))
         queries.append(URLQueryItem(name: "destination", value: destination.id.description))
-                       
-        let requestURL = Updater().getRequestURL(directory: directories.morning, queries: queries)
-        Updater().makeActionRequest(url: requestURL){response in
-            print(String(data: response, encoding: .utf8) ?? "")
-        }
+        
+        let _ = try? await RequestManager().makeActionRequest(requestDirectory: ActionDirectories.morning, queries: queries)
+//        let requestURL = Updater().getRequestURL(directory: directories.morning, queries: queries)
+//        Updater().makeActionRequest(url: requestURL){response in
+//            print(String(data: response, encoding: .utf8) ?? "")
+//        }
     }
     
     func addLocation(location: LocationDestination){
-        var queries = [URLQueryItem]()
-        queries.append(URLQueryItem(name: "action", value: "addLocation"))
-        queries.append(URLQueryItem(name: "name", value: location.name))
-        queries.append(URLQueryItem(name: "lat", value: String(location.latitude)))
-        queries.append(URLQueryItem(name: "lon", value: String(location.longitude)))
-                       
-        let requestURL = Updater().getRequestURL(directory: directories.morning, queries: queries)
-        Updater().makeActionRequest(url: requestURL){response in
-            print(String(data: response, encoding: .utf8) ?? "")
+        Task{
+            var queries = [URLQueryItem]()
+            queries.append(URLQueryItem(name: "action", value: "addLocation"))
+            queries.append(URLQueryItem(name: "name", value: location.name))
+            queries.append(URLQueryItem(name: "lat", value: String(location.latitude)))
+            queries.append(URLQueryItem(name: "lon", value: String(location.longitude)))
+        
+            let _ = try? await RequestManager().makeActionRequest(requestDirectory: ActionDirectories.morning, queries: queries)
         }
+//        let requestURL = Updater().getRequestURL(directory: directories.morning, queries: queries)
+//        Updater().makeActionRequest(url: requestURL){response in
+//            print(String(data: response, encoding: .utf8) ?? "")
+//        }
     }
     
     func getTimeToDeparture(morning: Morning, secondsToArrival: Int) -> (Int, Int){

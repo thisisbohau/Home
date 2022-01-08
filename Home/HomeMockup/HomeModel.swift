@@ -119,7 +119,7 @@ struct SolarProductionOverlay: Shape {
 
 
 struct HomeModel: View {
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State var solar: [Color] = [.green, .clear]
     @State var cycle: Bool = false
 //    let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()

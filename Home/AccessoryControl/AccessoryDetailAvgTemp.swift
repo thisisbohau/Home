@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AccessoryDetailAvgTemp: View {
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State var averageTemp: Float = 0.0
     @State var egSelected: Bool = true
     

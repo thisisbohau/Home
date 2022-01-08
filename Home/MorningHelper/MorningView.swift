@@ -16,10 +16,11 @@ struct MapView: UIViewRepresentable {
   
     @Binding var destination: LocationDestination
     @Binding var sToA: Int
-    @State var region = GeoKit().getLastKnownLocation()
-  func makeCoordinator() -> MapViewCoordinator {
-    return MapViewCoordinator()
-  }
+    @State var region = LocationControl().getHomeGeofence().center
+  
+    func makeCoordinator() -> MapViewCoordinator {
+        return MapViewCoordinator()
+    }
   
     func makeUIView(context: Context) -> MKMapView {
       print("DESTINATION: \(destination)")
@@ -87,7 +88,7 @@ struct MorningView: View {
     @ObservedObject var calendar = CalendarKit()
     @EnvironmentObject var morning: MorningKit
     @StateObject var locationManager = LocationManager()
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State private var directions: [String] = []
     @State var ad: [String] = []
     @State private var showDirections = false

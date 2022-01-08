@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AccessoryDetailBlinds: View {
-    @EnvironmentObject var updater: Updater
+    @EnvironmentObject var updater: UpdateManager
     @State var closedBlinds: [Blind] = [Blind]()
     @State var egSelected: Bool = true
     
