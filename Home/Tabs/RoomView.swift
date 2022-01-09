@@ -59,6 +59,7 @@ struct RoomView: View {
     
     
     func checkHumidity(){
+        print("hy")
         guard let device = room.tempDevices.first else{return}
         let humidityState = TadoKit().humidityIsNominal(tado: device)
         switch humidityState{
