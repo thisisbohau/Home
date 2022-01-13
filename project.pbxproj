@@ -212,8 +212,8 @@
 		C946C0F9278A2513003F5453 /* AccessoryOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF7E278A2512003F5453 /* AccessoryOverview.swift */; };
 		C946C0FA278A2513003F5453 /* ActiveDeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF7F278A2512003F5453 /* ActiveDeviceList.swift */; };
 		C946C0FB278A2513003F5453 /* ActiveDeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF7F278A2512003F5453 /* ActiveDeviceList.swift */; };
-		C946C0FC278A2513003F5453 /* AccessoryDetailAvgTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF80278A2512003F5453 /* AccessoryDetailAvgTemp.swift */; };
-		C946C0FD278A2513003F5453 /* AccessoryDetailAvgTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF80278A2512003F5453 /* AccessoryDetailAvgTemp.swift */; };
+		C946C0FC278A2513003F5453 /* TadoOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF80278A2512003F5453 /* TadoOverview.swift */; };
+		C946C0FD278A2513003F5453 /* TadoOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BF80278A2512003F5453 /* TadoOverview.swift */; };
 		C946C0FE278A2513003F5453 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C946BF81278A2512003F5453 /* GoogleService-Info.plist */; };
 		C946C0FF278A2513003F5453 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C946BF81278A2512003F5453 /* GoogleService-Info.plist */; };
 		C946C102278A2513003F5453 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C946BF84278A2512003F5453 /* Preview Assets.xcassets */; };
@@ -442,7 +442,7 @@
 		C946BF7D278A2512003F5453 /* AccessoryDetailBlinds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryDetailBlinds.swift; sourceTree = "<group>"; };
 		C946BF7E278A2512003F5453 /* AccessoryOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryOverview.swift; sourceTree = "<group>"; };
 		C946BF7F278A2512003F5453 /* ActiveDeviceList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDeviceList.swift; sourceTree = "<group>"; };
-		C946BF80278A2512003F5453 /* AccessoryDetailAvgTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryDetailAvgTemp.swift; sourceTree = "<group>"; };
+		C946BF80278A2512003F5453 /* TadoOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TadoOverview.swift; sourceTree = "<group>"; };
 		C946BF81278A2512003F5453 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C946BF84278A2512003F5453 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C946BF85278A2512003F5453 /* Home.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Home.entitlements; sourceTree = "<group>"; };
@@ -585,43 +585,41 @@
 		C946BEE7278A2512003F5453 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C946BEE8278A2512003F5453 /* Tabs */,
-				C946BF0B278A2512003F5453 /* SF-Mono-Bold.otf */,
-				C946BF0C278A2512003F5453 /* RoomTagSetup.swift */,
-				C946BF0D278A2512003F5453 /* SF-Mono-Light.otf */,
-				C946BF0E278A2512003F5453 /* Delete */,
-				C946BF10278A2512003F5453 /* Kits */,
-				C946BF65278A2512003F5453 /* AccessControl */,
-				C946BF69278A2512003F5453 /* SF-Mono-Regular.otf */,
-				C946BF6A278A2512003F5453 /* SF-Mono-Heavy.otf */,
-				C946BF6D278A2512003F5453 /* SF-Mono-BoldItalic.otf */,
-				C946BF6E278A2512003F5453 /* SF-Mono-MediumItalic.otf */,
-				C946BF6F278A2512003F5453 /* Assets.xcassets */,
-				C946BF70278A2512003F5453 /* SF-Mono-RegularItalic.otf */,
-				C946BF71278A2512003F5453 /* ReusableComponents */,
-				C946BF78278A2512003F5453 /* SF-Mono-Italic.ttf */,
-				C946BF7A278A2512003F5453 /* Timer.swift */,
+				C946BFAB278A2512003F5453 /* LocationControl */,
 				C946BF7B278A2512003F5453 /* AccessoryControl */,
+				C946BF65278A2512003F5453 /* AccessControl */,
+				C946BF86278A2512003F5453 /* ConnectControl */,
+				C946BEE8278A2512003F5453 /* Tabs */,
+				C946BF0E278A2512003F5453 /* Delete */,
+				C946BF71278A2512003F5453 /* ReusableComponents */,
+				C946BFCD278A2512003F5453 /* HomeMockup */,
+				C946BFE9278A2512003F5453 /* UIControls */,
+				C946BFE3278A2512003F5453 /* Notifications */,
+				C946BFF6278A2513003F5453 /* Utility */,
+				C946BF10278A2512003F5453 /* Kits */,
+				C946BF6F278A2512003F5453 /* Assets.xcassets */,
+				C946BF7A278A2512003F5453 /* Timer.swift */,
 				C946BF81278A2512003F5453 /* GoogleService-Info.plist */,
 				C946BF83278A2512003F5453 /* Preview Content */,
 				C946BF85278A2512003F5453 /* Home.entitlements */,
-				C946BF86278A2512003F5453 /* ConnectControl */,
 				C946BF8D278A2512003F5453 /* SF-Mono-Semibold.otf */,
 				C946BF8F278A2512003F5453 /* UIControls.swift */,
 				C946BF98278A2512003F5453 /* NFC.swift */,
-				C946BFA4278A2512003F5453 /* MorningHelper */,
-				C946BFAB278A2512003F5453 /* LocationControl */,
 				C946BFAF278A2512003F5453 /* VerticalSlider.swift */,
 				C946BFBE278A2512003F5453 /* SF-Mono-SemiboldItalic.otf */,
+				C946BF0B278A2512003F5453 /* SF-Mono-Bold.otf */,
+				C946BF0D278A2512003F5453 /* SF-Mono-Light.otf */,
+				C946BF69278A2512003F5453 /* SF-Mono-Regular.otf */,
+				C946BF70278A2512003F5453 /* SF-Mono-RegularItalic.otf */,
+				C946BF6A278A2512003F5453 /* SF-Mono-Heavy.otf */,
+				C946BF6D278A2512003F5453 /* SF-Mono-BoldItalic.otf */,
+				C946BF6E278A2512003F5453 /* SF-Mono-MediumItalic.otf */,
+				C946BF78278A2512003F5453 /* SF-Mono-Italic.ttf */,
+				C946BFE8278A2512003F5453 /* SF-Mono-HeavyItalic.otf */,
 				C946BFC6278A2512003F5453 /* SF-Mono-Medium.otf */,
-				C946BFCD278A2512003F5453 /* HomeMockup */,
 				C946BFD5278A2512003F5453 /* SF-Mono-LightItalic.otf */,
 				C946BFD9278A2512003F5453 /* ProjectBlue */,
-				C946BFE3278A2512003F5453 /* Notifications */,
-				C946BFE8278A2512003F5453 /* SF-Mono-HeavyItalic.otf */,
-				C946BFE9278A2512003F5453 /* UIControls */,
 				C946BFEF278A2512003F5453 /* Info.plist */,
-				C946BFF6278A2513003F5453 /* Utility */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -650,6 +648,7 @@
 		C946BF10278A2512003F5453 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				C946BFA4278A2512003F5453 /* MorningHelper */,
 				C946BF11278A2512003F5453 /* Power */,
 				C946BF15278A2512003F5453 /* PresenceControl */,
 				C946BF19278A2512003F5453 /* Blinds */,
@@ -891,7 +890,7 @@
 				C946BF7D278A2512003F5453 /* AccessoryDetailBlinds.swift */,
 				C946BF7E278A2512003F5453 /* AccessoryOverview.swift */,
 				C946BF7F278A2512003F5453 /* ActiveDeviceList.swift */,
-				C946BF80278A2512003F5453 /* AccessoryDetailAvgTemp.swift */,
+				C946BF80278A2512003F5453 /* TadoOverview.swift */,
 			);
 			path = AccessoryControl;
 			sourceTree = "<group>";
@@ -982,6 +981,7 @@
 		C946BFF6278A2513003F5453 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				C946BF0C278A2512003F5453 /* RoomTagSetup.swift */,
 				C946BFF7278A2513003F5453 /* NotificationCentre.swift */,
 				C946BFF8278A2513003F5453 /* SwitchKit.swift */,
 				C946BFF9278A2513003F5453 /* SystemHelpers */,
@@ -1414,7 +1414,7 @@
 				C946C104278A2513003F5453 /* RequestManager.swift in Sources */,
 				C946C0E8278A2513003F5453 /* DashboardWidgets.swift in Sources */,
 				C946C0C4278A2513003F5453 /* Pool.swift in Sources */,
-				C946C0FC278A2513003F5453 /* AccessoryDetailAvgTemp.swift in Sources */,
+				C946C0FC278A2513003F5453 /* TadoOverview.swift in Sources */,
 				C946C070278A2513003F5453 /* SceneKit.swift in Sources */,
 				C946C012278A2513003F5453 /* Settings.swift in Sources */,
 				C946C0F6278A2513003F5453 /* AccessoryDetailBlinds.swift in Sources */,
@@ -1573,7 +1573,7 @@
 				C946C0E9278A2513003F5453 /* DashboardWidgets.swift in Sources */,
 				C946C0B1278A2513003F5453 /* RoomDeviceSummary.swift in Sources */,
 				C946C099278A2513003F5453 /* IrrigationKit.swift in Sources */,
-				C946C0FD278A2513003F5453 /* AccessoryDetailAvgTemp.swift in Sources */,
+				C946C0FD278A2513003F5453 /* TadoOverview.swift in Sources */,
 				C946C0F9278A2513003F5453 /* AccessoryOverview.swift in Sources */,
 				C946C0D5278A2513003F5453 /* Biometrics.swift in Sources */,
 				C946C1CD278A2513003F5453 /* CalendarAccess.swift in Sources */,
@@ -1837,7 +1837,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021106;
+				CURRENT_PROJECT_VERSION = 2022001;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
@@ -1847,7 +1847,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = HomeAutomation.HomeSmile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1864,7 +1864,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2021106;
+				CURRENT_PROJECT_VERSION = 2022001;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
@@ -1874,7 +1874,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = HomeAutomation.HomeSmile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
