@@ -214,14 +214,24 @@ struct RoomType: Codable{
     var color: String
 }
 
-
-let userData = "iCloud.Home"
-let container = CKContainer(identifier: userData)
-let database = container.publicCloudDatabase
-
-class FetchKit: ObservableObject{
-    
-    func getLights(completion: @escaping([Light]) -> Void){
-        
-    }
+struct DishwasherOption: Codable, Identifiable{
+    var id: Int
+    var name: String
+    var available: Bool
+}
+struct DishwasherProgram: Codable, Identifiable{
+    var id: Int
+    var name: String
+}
+struct Dishwasher: Codable{
+    var power: Bool
+    var doorState: Bool
+    var event: String?
+    var operationState: String
+    var timeRemaining: Int
+    var activeProgram: String
+    var availablePrograms: [DishwasherProgram]
+    var availableOptions: [DishwasherOption]
+    var programProgress: Int
+    var startTime: String
 }

@@ -76,7 +76,7 @@ struct AccessoryOverview: View {
             LaundryView()
         }
         .sheet(isPresented: $showTadoDetail){
-            AccessoryDetailAvgTemp()
+            TadoOverview()
         }
         .sheet(isPresented: $showBlindDetail){
             AccessoryDetailBlinds()

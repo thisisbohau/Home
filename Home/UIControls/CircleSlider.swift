@@ -45,7 +45,8 @@ struct CircleSlider: View {
                     .frame(width: 30, height: 30)
                     .offset(x: size / 2)
                     .rotationEffect(.init(degrees: angle))
-                    .gesture(DragGesture().onChanged(onDrag(value:)))
+                    
+                    .highPriorityGesture(DragGesture().onChanged(onDrag(value:)))
                     .rotationEffect(Angle(degrees: 145))
                 
 //                Text("$" + String(progress.description))

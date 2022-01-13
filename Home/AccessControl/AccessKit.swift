@@ -136,10 +136,10 @@ class AccessKit{
         return String(data: Keychain.load(key: "FCMToken") ?? Data(), encoding: .utf8) ?? ""
     }
     func getDeviceToken() -> String{
-        let key = String(data: Keychain.load(key: "DeviceToken") ?? Data(), encoding: .utf8) ?? ""
+        let key = String(data: Keychain.load(key: "DeviceIdentifierToken") ?? Data(), encoding: .utf8) ?? ""
         if key == ""{
             let token = UIDevice.current.identifierForVendor!.uuidString
-            let _ = Keychain.save(key: "DeviceToken", data: token.data(using: .utf8) ?? Data())
+            let _ = Keychain.save(key: "DeviceIdentifierToken", data: token.data(using: .utf8) ?? Data())
             print("DeviceToken generated and saved in keychain: \(token)")
             return token
         }else{

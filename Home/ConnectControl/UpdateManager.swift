@@ -48,6 +48,7 @@ class UpdateManager: ObservableObject{
     
     var timerLoop = Timer()
     func startUpdateLoop(){
+        printHomeStruct()
         timerLoop = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.configurationCheck), userInfo: nil, repeats: true)
     }
     
@@ -290,7 +291,7 @@ class UpdateManager: ObservableObject{
     func printHomeStruct(){
         let encoder = JSONEncoder()
         do{
-            let data = try encoder.encode(Device(id: "", role: 0, home: false, name: "", lat: 0, lon: 0, speed: 0, fcmToken: "", lastHome: ""))
+            let data = try encoder.encode(Dishwasher(power: false, doorState: false, event: "", operationState: "", timeRemaining: 0, activeProgram: "", availablePrograms: [DishwasherProgram(id: 0, name: "")], availableOptions: [DishwasherOption(id: 0, name: "", available: false)], programProgress: 0, startTime: ""))
             print("Home structure template.....\n")
             print(String(data: data, encoding: .utf8) ?? "")
             print("\n.....eof")

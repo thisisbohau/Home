@@ -146,14 +146,12 @@ class LocationControl{
                 var string = ""
                 if homeDevices.contains(where: {$0.id == current.id}){
                     homeDevices.removeAll(where: {$0.id == current.id})
-                    if homeDevices.count == 2{
+                    if homeDevices.count == 1{
                         string = "You and "
                     }else{
                         string = "You, "
                     }
                 }
-                
-                    
                     var arr = homeDevices.compactMap({$0.name})
                     let last = arr.popLast()
                     let str =  arr.joined(separator: ", ") + " and " + last!
