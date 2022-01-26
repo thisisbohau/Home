@@ -308,6 +308,8 @@
 		C946C1D1278A2513003F5453 /* CalendarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C004278A2513003F5453 /* CalendarSettings.swift */; };
 		C946C1D2278A2513003F5453 /* SystemUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C005278A2513003F5453 /* SystemUtility.swift */; };
 		C946C1D3278A2513003F5453 /* SystemUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946C005278A2513003F5453 /* SystemUtility.swift */; };
+		C94BF865279CBFDE00AB6998 /* SmartCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BF864279CBFDE00AB6998 /* SmartCircleSlider.swift */; };
+		C94BF866279CBFDE00AB6998 /* SmartCircleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BF864279CBFDE00AB6998 /* SmartCircleSlider.swift */; };
 		C95DB1F82632F3C10054731F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95DB1F72632F3C10054731F /* CloudKit.framework */; };
 		C95DB2042632F3FD0054731F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95DB2032632F3FD0054731F /* Assets.xcassets */; };
 		C95DB2072632F3FD0054731F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95DB2062632F3FD0054731F /* Preview Assets.xcassets */; };
@@ -319,6 +321,10 @@
 		C960F19F2695FA9900BFB2C7 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C960F19E2695FA9900BFB2C7 /* FirebaseMessaging */; };
 		C960F1A12695FA9900BFB2C7 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C960F1A02695FA9900BFB2C7 /* FirebaseRemoteConfig */; };
 		C9733B9A278A3AB6007242F7 /* HomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9733B99278A3AB6007242F7 /* HomeApp.swift */; };
+		C98F99E8279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */; };
+		C98F99E9279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */; };
+		C98F99EB27955B6F00C41DA1 /* DishwasherProgramSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */; };
+		C98F99EC27955B6F00C41DA1 /* DishwasherProgramSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */; };
 		C991091B267A92E900261BB1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C991091A267A92E900261BB1 /* CloudKit.framework */; };
 		C9B4C0BB267A83C4007C19F2 /* HomeTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4C0BA267A83C4007C19F2 /* HomeTVApp.swift */; };
 		C9B4C0BF267A83C5007C19F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9B4C0BE267A83C5007C19F2 /* Assets.xcassets */; };
@@ -328,6 +334,12 @@
 		C9B4C0F9267A8D38007C19F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4C0BC267A83C4007C19F2 /* ContentView.swift */; };
 		C9B4C111267A919B007C19F2 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B4C110267A919B007C19F2 /* Property List.plist */; };
 		C9E1644226826DEF0060FE61 /* ColorPickerRing in Frameworks */ = {isa = PBXBuildFile; productRef = C9E1644126826DEF0060FE61 /* ColorPickerRing */; };
+		C9FF8A8B27936B9700421F28 /* DishwasherOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */; };
+		C9FF8A8C27936B9700421F28 /* DishwasherOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */; };
+		C9FF8A8E27936C7200421F28 /* DishwasherKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8D27936C7200421F28 /* DishwasherKit.swift */; };
+		C9FF8A8F27936C7200421F28 /* DishwasherKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8D27936C7200421F28 /* DishwasherKit.swift */; };
+		C9FF8A91279375A500421F28 /* DishwasherStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A90279375A500421F28 /* DishwasherStatus.swift */; };
+		C9FF8A92279375A500421F28 /* DishwasherStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A90279375A500421F28 /* DishwasherStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -492,6 +504,7 @@
 		C946C003278A2513003F5453 /* CalendarList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarList.swift; sourceTree = "<group>"; };
 		C946C004278A2513003F5453 /* CalendarSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSettings.swift; sourceTree = "<group>"; };
 		C946C005278A2513003F5453 /* SystemUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUtility.swift; sourceTree = "<group>"; };
+		C94BF864279CBFDE00AB6998 /* SmartCircleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCircleSlider.swift; sourceTree = "<group>"; };
 		C95DB1DF2632CE690054731F /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95DB1F72632F3C10054731F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C95DB1FD2632F3FB0054731F /* iOSHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,6 +514,8 @@
 		C95DB20C2632F4000054731F /* iOSHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSHome.entitlements; sourceTree = "<group>"; };
 		C95DB20D2632F4040054731F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9733B99278A3AB6007242F7 /* HomeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApp.swift; sourceTree = "<group>"; };
+		C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCircleGauge.swift; sourceTree = "<group>"; };
+		C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherProgramSelector.swift; sourceTree = "<group>"; };
 		C9910919267A926800261BB1 /* HomeTV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeTV.entitlements; sourceTree = "<group>"; };
 		C991091A267A92E900261BB1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS15.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9B4C0B8267A83C4007C19F2 /* HomeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -514,6 +529,9 @@
 		C9B4C0D5267A83C5007C19F2 /* HomeTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTVUITests.swift; sourceTree = "<group>"; };
 		C9B4C110267A919B007C19F2 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		C9B4C112267A9239007C19F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherOverview.swift; sourceTree = "<group>"; };
+		C9FF8A8D27936C7200421F28 /* DishwasherKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherKit.swift; sourceTree = "<group>"; };
+		C9FF8A90279375A500421F28 /* DishwasherStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -648,6 +666,7 @@
 		C946BF10278A2512003F5453 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
+				C9FF8A8927936B7E00421F28 /* Dishwasher */,
 				C946BFA4278A2512003F5453 /* MorningHelper */,
 				C946BF11278A2512003F5453 /* Power */,
 				C946BF15278A2512003F5453 /* PresenceControl */,
@@ -974,6 +993,8 @@
 				C946BFEC278A2512003F5453 /* SmartVerticalSlider.swift */,
 				C946BFED278A2512003F5453 /* CircleSlider.swift */,
 				C946BFEE278A2512003F5453 /* SmartSelectionSlider.swift */,
+				C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */,
+				C94BF864279CBFDE00AB6998 /* SmartCircleSlider.swift */,
 			);
 			path = UIControls;
 			sourceTree = "<group>";
@@ -1104,6 +1125,17 @@
 				C9B4C0D5267A83C5007C19F2 /* HomeTVUITests.swift */,
 			);
 			path = HomeTVUITests;
+			sourceTree = "<group>";
+		};
+		C9FF8A8927936B7E00421F28 /* Dishwasher */ = {
+			isa = PBXGroup;
+			children = (
+				C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */,
+				C9FF8A8D27936C7200421F28 /* DishwasherKit.swift */,
+				C9FF8A90279375A500421F28 /* DishwasherStatus.swift */,
+				C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */,
+			);
+			path = Dishwasher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1406,6 +1438,8 @@
 				C946C0D4278A2513003F5453 /* Biometrics.swift in Sources */,
 				C946C10C278A2513003F5453 /* DataTypes.swift in Sources */,
 				C946C06C278A2513003F5453 /* SceneLightControl.swift in Sources */,
+				C9FF8A8B27936B9700421F28 /* DishwasherOverview.swift in Sources */,
+				C98F99E8279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */,
 				C946C0CA278A2513003F5453 /* LeaveSentry.swift in Sources */,
 				C946C0A0278A2513003F5453 /* IrrigationScheduleView.swift in Sources */,
 				C946C00A278A2513003F5453 /* MainMenu.swift in Sources */,
@@ -1428,6 +1462,7 @@
 				C946C1A6278A2513003F5453 /* SmartToggleSwitch.swift in Sources */,
 				C946C0B6278A2513003F5453 /* RoomSelector.swift in Sources */,
 				C946C04E278A2513003F5453 /* PowerOverview.swift in Sources */,
+				C94BF865279CBFDE00AB6998 /* SmartCircleSlider.swift in Sources */,
 				C946C10E278A2513003F5453 /* NetworkMonitor.swift in Sources */,
 				C946C0E4278A2513003F5453 /* MainControl.swift in Sources */,
 				C946C09E278A2513003F5453 /* IrrigationView.swift in Sources */,
@@ -1452,9 +1487,12 @@
 				C946C0BA278A2513003F5453 /* MowerOverview.swift in Sources */,
 				C946C06A278A2513003F5453 /* SceneSelectAccessories.swift in Sources */,
 				C946C1AC278A2513003F5453 /* SmartSelectionSlider.swift in Sources */,
+				C9FF8A8E27936C7200421F28 /* DishwasherKit.swift in Sources */,
 				C946C058278A2513003F5453 /* BlindControl.swift in Sources */,
+				C9FF8A91279375A500421F28 /* DishwasherStatus.swift in Sources */,
 				C946C062278A2513003F5453 /* SceneControl.swift in Sources */,
 				C946C1CE278A2513003F5453 /* CalendarList.swift in Sources */,
+				C98F99EB27955B6F00C41DA1 /* DishwasherProgramSelector.swift in Sources */,
 				C946C0FA278A2513003F5453 /* ActiveDeviceList.swift in Sources */,
 				C946C084278A2513003F5453 /* GarageControl.swift in Sources */,
 				C946C13E278A2513003F5453 /* AddDestination.swift in Sources */,
@@ -1498,6 +1536,7 @@
 				C946C18B278A2513003F5453 /* bluetoothManager.swift in Sources */,
 				C946C0F5278A2513003F5453 /* AccessoryDetailLights.swift in Sources */,
 				C946C1C3278A2513003F5453 /* ColorWheel.swift in Sources */,
+				C94BF866279CBFDE00AB6998 /* SmartCircleSlider.swift in Sources */,
 				C946C0C1278A2513003F5453 /* SentryView.swift in Sources */,
 				C946C085278A2513003F5453 /* GarageControl.swift in Sources */,
 				C946C13D278A2513003F5453 /* MorningKit.swift in Sources */,
@@ -1515,6 +1554,7 @@
 				C946C09F278A2513003F5453 /* IrrigationView.swift in Sources */,
 				C946C1BF278A2513003F5453 /* LoadingViews.swift in Sources */,
 				C946C063278A2513003F5453 /* SceneControl.swift in Sources */,
+				C98F99EC27955B6F00C41DA1 /* DishwasherProgramSelector.swift in Sources */,
 				C946C1BD278A2513003F5453 /* SwitchKit.swift in Sources */,
 				C946C0AF278A2513003F5453 /* RoomKit.swift in Sources */,
 				C946C0B9278A2513003F5453 /* ErrorView.swift in Sources */,
@@ -1532,6 +1572,7 @@
 				C946C137278A2513003F5453 /* MorningView.swift in Sources */,
 				C946C109278A2513003F5453 /* UpdateManager.swift in Sources */,
 				C946C04D278A2513003F5453 /* PowerKit.swift in Sources */,
+				C9FF8A8F27936C7200421F28 /* DishwasherKit.swift in Sources */,
 				C946C09D278A2513003F5453 /* IrrigationRoom.swift in Sources */,
 				C946C1AD278A2513003F5453 /* SmartSelectionSlider.swift in Sources */,
 				C946C1C1278A2513003F5453 /* CircularSlider.swift in Sources */,
@@ -1560,6 +1601,7 @@
 				C946C0E7278A2513003F5453 /* ActionRecommendation.swift in Sources */,
 				C946C0C3278A2513003F5453 /* sentryKit.swift in Sources */,
 				C946C0E5278A2513003F5453 /* MainControl.swift in Sources */,
+				C9FF8A8C27936B9700421F28 /* DishwasherOverview.swift in Sources */,
 				C946C097278A2513003F5453 /* Irrigation.swift in Sources */,
 				C946C0AB278A2513003F5453 /* WeatherAdaption.swift in Sources */,
 				C946C073278A2513003F5453 /* NewScene.swift in Sources */,
@@ -1579,6 +1621,7 @@
 				C946C1CD278A2513003F5453 /* CalendarAccess.swift in Sources */,
 				C946C075278A2513003F5453 /* LaundryView.swift in Sources */,
 				C946C107278A2513003F5453 /* ServerSettings.swift in Sources */,
+				C9FF8A92279375A500421F28 /* DishwasherStatus.swift in Sources */,
 				C946C087278A2513003F5453 /* GarageKit.swift in Sources */,
 				C946C13F278A2513003F5453 /* AddDestination.swift in Sources */,
 				C946C1C5278A2513003F5453 /* helpers.swift in Sources */,
@@ -1598,6 +1641,7 @@
 				C946C0F7278A2513003F5453 /* AccessoryDetailBlinds.swift in Sources */,
 				C946C06F278A2513003F5453 /* SceneTadoControl.swift in Sources */,
 				C946C147278A2513003F5453 /* LocationManager.swift in Sources */,
+				C98F99E9279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */,
 				C946C07B278A2513003F5453 /* LightKit.swift in Sources */,
 				C946C19D278A2513003F5453 /* NotificationList.swift in Sources */,
 				C946C0A7278A2513003F5453 /* WeatherKit.swift in Sources */,
@@ -1837,7 +1881,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2022001;
+				CURRENT_PROJECT_VERSION = 2022002;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
@@ -1847,7 +1891,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = HomeAutomation.HomeSmile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1864,7 +1908,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2022001;
+				CURRENT_PROJECT_VERSION = 2022002;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
@@ -1874,7 +1918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = HomeAutomation.HomeSmile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
