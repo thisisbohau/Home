@@ -245,6 +245,8 @@ struct MainView: View {
                             Spacer()
                             VStack(alignment: .leading){
                                 Todos()
+//                                OverviewDivider(title: "Dishwasher", icon: "weather")
+//                                DishwasherOverview()
                                 OverviewDivider(title: "Power", icon: "gridIcon")
                                 PowerOverview(screenWidth: proxy.size.width)
                                 

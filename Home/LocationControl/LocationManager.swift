@@ -23,8 +23,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.activityType = .fitness
-        locationManager.pausesLocationUpdatesAutomatically = true
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.showsBackgroundLocationIndicator = false
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.requestLocation()
@@ -73,6 +73,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) {
         print("Location updates have resumed, updating Location")
+        
     }
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         print("Location updates have been paused by the system, pushing last known location and status")
@@ -148,14 +149,26 @@ class LocationControl{
                     homeDevices.removeAll(where: {$0.id == current.id})
                     if homeDevices.count == 1{
                         string = "You and "
+                        let str =   homeDevices.compactMap({$0.name}).joined(separator: ", ")
+                        string.append(str)
                     }else{
                         string = "You, "
+                        var arr = homeDevices.compactMap({$0.name})
+                        let last = arr.popLast()
+                        let str =  arr.joined(separator: ", ") + " and " + last!
+                        string.append(str)
+                    }
+                }else{
+                    if homeDevices.count > 1{
+                        var arr = homeDevices.compactMap({$0.name})
+                        let last = arr.popLast()
+                        let str =  arr.joined(separator: ", ") + " and " + last!
+                        string.append(str)
+                    }else{
+                        let str =  homeDevices.compactMap({$0.name}).joined(separator: ", ")
+                        string.append(str)
                     }
                 }
-                    var arr = homeDevices.compactMap({$0.name})
-                    let last = arr.popLast()
-                    let str =  arr.joined(separator: ", ") + " and " + last!
-                    string.append(str)
                     
                 return "\(string) are Home"
             }

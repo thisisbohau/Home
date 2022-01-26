@@ -18,6 +18,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         BackgroundSession.shared.savedCompletionHandler = completionHandler
     }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        if ((launchOptions?.keys.contains(where: {$0 == .location})) != nil){
+            
+        }
         UNUserNotificationCenter.current().delegate = self
         
         let network = NetworkStatus.shared

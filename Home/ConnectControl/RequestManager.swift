@@ -101,7 +101,7 @@ class RequestManager{
         components.scheme = "http"
         components.path = "/hook/home/"
         components.port = 80
-        components.host = serverAddress
+        components.host = AccessKit().getServerAddress()
         components.queryItems = queries
         components.path.append(requestDirectory.rawValue)
         

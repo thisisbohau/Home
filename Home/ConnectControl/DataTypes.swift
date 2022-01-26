@@ -93,7 +93,7 @@ struct Blind: Identifiable, Codable{
     var position: Int
     var moving: Bool
 }
-struct TempDevice: Identifiable, Codable{
+struct TempDevice: Identifiable, Codable, Hashable{
     var id: String
     var isAC: Bool
     var name: String
@@ -207,6 +207,7 @@ struct Home: Codable{
     var laundry: [LaundryDevice]
     var morning: Morning
     var dogMode: DogMode
+    var dishwasher: Dishwasher
 }
 
 struct RoomType: Codable{
@@ -218,9 +219,10 @@ struct DishwasherOption: Codable, Identifiable{
     var id: Int
     var name: String
     var available: Bool
+    var state: Bool
 }
 struct DishwasherProgram: Codable, Identifiable{
-    var id: Int
+    var id: String
     var name: String
 }
 struct Dishwasher: Codable{

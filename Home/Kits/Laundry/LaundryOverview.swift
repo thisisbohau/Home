@@ -30,7 +30,7 @@ struct LaundryOverview: View {
         }
     }
     var body: some View {
-        ScrollView(.horizontal){
+        ScrollView(.horizontal, showsIndicators: false){
             HStack{
                 ForEach(updater.status.laundry){device in
                     if device.activeCycle{

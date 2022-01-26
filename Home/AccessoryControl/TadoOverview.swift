@@ -16,7 +16,10 @@ struct TadoOverview: View{
     @State var devicesNotInAuto: Bool = false
     @State var viewSize: CGSize = CGSize(width: 0, height: 0)
     
-    @State var setAllTemp: Float = 0
+    @State var avgTemp: Float = 0
+    @State var avgTempInt: Int = 0
+    @State var setAllTemp: Float = 22
+    @State var setAllOffset: Float = 6
     @State var defaultPos: CGFloat = 0
     @State var showTempSlider: Bool = true
     @State var animateChanges: Bool = false
@@ -31,46 +34,67 @@ struct TadoOverview: View{
     @State var selectedOption: SelectionPoint = SelectionPoint(id: 0, icon: AnyView(Text("ALL").rotationEffect(Angle(degrees: 90))), title: "")
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: Int(sizeOptimizer(iPhoneSize: 3, iPadSize: 6)))
     
+    func updateSetAll(){
+        //minimum: 16°
+        let setTo = 16 + setAllOffset
+        setAllTemp = setTo
+    }
     
     func getRoomName(tado: TempDevice) -> String{
         return updater.status.rooms.first(where: {$0.tempDevices.contains(where: {$0.id == tado.id})})?.name ?? ""
     }
     func returnToAuto(tado: TempDevice){
-        
+        TadoKit().backToAuto(device: tado)
     }
     func controlTado(tado: TempDevice){
         selectedTado = tado
         controlTado = true
     }
     
-    func autoAdapt(){
-       
+    func boostAll(){
+        Task{
+            animate = true
+            await TadoKit().boost()
+            animate = false
+        }
+    }
+    func setAll(){
+        animate = true
+        for tado in updater.status.rooms.flatMap({$0.tempDevices}){
+            var modified = tado
+            modified.setTemp = setAllTemp
+            
+            TadoKit().setTemp(device: modified)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            animate = false
+        })
     }
     
     func returnAllToAuto(){
-        animateTo = true
-        if selectedFloor == 2{
-            //all
-        }else{
-            
+        animate = true
+        for tado in notInAutoMode{
+            TadoKit().backToAuto(device: tado)
         }
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            animate = false
+        })
     }
     func update(){
-        switch selectedOption.id{
-        case 0:
-            selectedFloor = 2
-        case 1:
-            selectedFloor = 0
-        case 2:
-            selectedFloor = 1
-        default:
-            selectedFloor = 2
-        }
+//        switch selectedOption.id{
+//        case 0:
+//            selectedFloor = 2
+//        case 1:
+//            selectedFloor = 0
+//        case 2:
+//            selectedFloor = 1
+//        default:
+//            selectedFloor = 2
+//        }
         if selectedFloor == 2{
             let tado = updater.status.rooms.flatMap({$0.tempDevices})
             notInAutoMode = tado.filter({$0.manualMode})
-            allTadoDevices = tado
+            allTadoDevices = Array(Set(tado).subtracting(Set(notInAutoMode)))
         }else{
             let tado = updater.status.rooms.filter({$0.floor == selectedFloor}).flatMap({$0.tempDevices})
             notInAutoMode = tado.filter({$0.manualMode})
@@ -81,34 +105,65 @@ struct TadoOverview: View{
             devicesNotInAuto = true
         }else{
             devicesNotInAuto = false
-            animateTo = false
+            animate = false
         }
         
+        let tado = updater.status.rooms.flatMap({$0.tempDevices})
+        avgTemp = tado.compactMap({$0.temp}).reduce(0, +)/Float(tado.count)
+        if !avgTemp.isNaN{
+            avgTempInt = Int(avgTemp)
+        }
+    }
+    
+    var gaugeOverlay: some View{
+        VStack{
+            Text("SET ALL")
+                .foregroundColor(.orange)
+
+                Text("\(String(format: "%.1f", setAllTemp))°")
+                    .font(.custom("SF Mono", size: 50).weight(.medium))
+               
+            Text("Inside avg. \(String(format: "%.1f", avgTemp))°")
+                .foregroundStyle(.secondary)
+        }
     }
     
     var tempSlider: some View{
         VStack{
-            CircleSlider(progressColors: [.orange, .pink], value: $setAllTemp, maxValue: 25, size: 200)
+            CircleSlider(progressColors: [.orange, .pink], value: $setAllOffset, maxValue: 9, size: 250)
+                .overlay(gaugeOverlay)
+            Button(action: setAll){
+                Text("SET")
+                    .padding([.leading, .trailing], 16)
+                    .padding([.bottom, .top], 8)
+                    .foregroundColor(.primary)
+                    .background(.orange)
+                    .cornerRadius(60)
+            }
+            .offset(y: -55)
         }
+        .padding([.top, .leading, .trailing])
+        .onChange(of: setAllOffset, perform: {_ in
+            updateSetAll()
+        })
     }
     var topLevelControl: some View{
         HStack{
-            Image(devicesNotInAuto ? "light.bulb" : "light.bulb.off")
-                .font(.largeTitle)
-                .symbolRenderingMode(.multicolor)
+            CircleGauge(maxValue: CGFloat(25), value: $avgTempInt, label: "\(avgTempInt.description)°", color: .orange, stroke: 9, font: .headline)
+                .frame(width: 65, height: 65)
             
             VStack(alignment: .leading){
-                Text("Lights")
+                Text("Tado")
                     .font(.title.bold())
                 
-                if notInAutoMode.count < 0{
-                    Text("Off")
+                if notInAutoMode.count <= 0{
+                    Text("Auto Mode")
                         .foregroundStyle(.secondary)
                 }else{
-                    Text("\(String(Int(notInAutoMode.count))) \(notInAutoMode.count == 1 ? "Light" : "Lights") On")
+                    Text("\(String(Int(notInAutoMode.count))) \(notInAutoMode.count == 1 ? "device in manual mode" : "devices in manual mode")")
                         .foregroundStyle(.secondary)
                 }
-            }
+            }.padding(.leading)
             Spacer()
         }
     }
@@ -121,13 +176,19 @@ struct TadoOverview: View{
                         animate.toggle()
                     }
                 })
-            if showTempSlider{
-                tempSlider
+            VStack{
+                if showTempSlider{
+                    tempSlider
+                        .padding(.top)
+                       
+                }
             }
+            .padding(.top)
+
             ScrollView{
 //                GeometryReader{proxy in
                     VStack{
-                        sectionControl
+//                        sectionControl
                         VStack{
                             notInAutoList
                         }
@@ -169,15 +230,36 @@ struct TadoOverview: View{
     
     var quickActions: some View{
         HStack{
-            Button(action: returnAllToAuto){
+            Button(action: boostAll){
                 HStack{
-                    Image(devicesNotInAuto ? "light.bulb" : "light.bulb.off")
-                        .symbolRenderingMode(.multicolor)
+                    Image(systemName: "flame.fill")
+                        .foregroundColor(.pink)
                     VStack(alignment: .leading){
-                        Text("Turn Off")
+                        Text("Boost All")
                             .font(.headline.bold())
                             .foregroundStyle(.primary)
-                        Text("All lights")
+                        Text("25° for 30min")
+                            .foregroundStyle(.secondary)
+                            .font(.caption)
+                            .lineLimit(1)
+                    }
+                    .foregroundColor(.black)
+                    Spacer()
+                }
+                .padding(10)
+                .background(.white)
+                .cornerRadius(18)
+            }
+            
+            Button(action: returnAllToAuto){
+                HStack{
+                    Image(systemName: "calendar")
+                        .foregroundColor(.teal)
+                    VStack(alignment: .leading){
+                        Text("Back to Auto")
+                            .font(.headline.bold())
+                            .foregroundStyle(.primary)
+                        Text("Resume schedule")
                             .foregroundStyle(.secondary)
                             .font(.caption)
                             .lineLimit(1)
@@ -190,32 +272,6 @@ struct TadoOverview: View{
                     view.background(.white)
                 })
                 .onCondition(!devicesNotInAuto, transform: {view in
-                    view.background(.regularMaterial)
-                })
-                .cornerRadius(18)
-            }
-            
-            Button(action: autoAdapt){
-                HStack{
-                    Image(systemName: "sparkles")
-                        .foregroundColor(.teal)
-                    VStack(alignment: .leading){
-                        Text("AutoAdapt")
-                            .font(.headline.bold())
-                            .foregroundStyle(.primary)
-                        Text("All active lights")
-                            .foregroundStyle(.secondary)
-                            .font(.caption)
-                            .lineLimit(1)
-                    }
-                    .foregroundColor(autoAdaptOn ? .black : .white)
-                    Spacer()
-                }
-                .padding(10)
-                .onCondition(autoAdaptOn, transform: {view in
-                    view.background(.white)
-                })
-                .onCondition(!autoAdaptOn, transform: {view in
                     view.background(.regularMaterial)
                 })
                 .cornerRadius(18)
@@ -271,23 +327,29 @@ struct TadoOverview: View{
     }
     var autoModeDevices: some View{
         VStack{
-            ForEach(updater.status.rooms){room in
-                if room.tempDevices.count > 0{
-                    VStack{
-                        HStack{
-                            Text(room.name)
-                                .font(.headline)
-                                .foregroundStyle(.secondary)
-                            Spacer()
-                        }
-                        LazyVGrid(columns: columns, alignment: .leading, spacing: 10){
-                            ForEach(room.tempDevices){tado in
-                                DeviceControl(type: tado.isAC ? .Cooling : .Heating, status: "\(String(Int(tado.temp)))°", name: tado.name, active: true, offStatus: "Off", onLongPress: {controlTado(tado: tado)}, onTap: {returnToAuto(tado: tado)})
-                            }
-                        }
-                    }.animation(nil, value: animate)
+            LazyVGrid(columns: columns, alignment: .leading, spacing: 10){
+                ForEach(allTadoDevices){tado in
+                    DeviceControl(type: tado.isAC ? .Cooling : .Heating, status: "\(String(Int(tado.temp)))°", name: getRoomName(tado: tado), active: true, offStatus: "Off", onLongPress: {controlTado(tado: tado)}, onTap: {returnToAuto(tado: tado)})
                 }
             }
+            
+//            ForEach(updater.status.rooms){room in
+//                if room.tempDevices.count > 0{
+//                    VStack{
+//                        HStack{
+//                            Text(room.name)
+//                                .font(.headline)
+//                                .foregroundStyle(.secondary)
+//                            Spacer()
+//                        }
+//                        LazyVGrid(columns: columns, alignment: .leading, spacing: 10){
+//                            ForEach(room.tempDevices){tado in
+//                                DeviceControl(type: tado.isAC ? .Cooling : .Heating, status: "\(String(Int(tado.temp)))°", name: tado.name, active: true, offStatus: "Off", onLongPress: {controlTado(tado: tado)}, onTap: {returnToAuto(tado: tado)})
+//                            }
+//                        }
+//                    }.animation(nil, value: animate)
+//                }
+//            }
         }
     }
     var body: some View {
@@ -300,6 +362,7 @@ struct TadoOverview: View{
             .onChange(of: updater.lastUpdated, perform: {_ in update()})
             .onChange(of: selectedOption.id, perform: {_ in update()})
             .onAppear(perform: update)
+
             .sheet(isPresented: $controlTado){
                 TadoControl(device: $selectedTado)
             }

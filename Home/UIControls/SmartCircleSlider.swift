@@ -1,17 +1,16 @@
 //
-//  CircleSlider.swift
+//  SmartCircleSlider.swift
 //  Home
 //
-//  Created by David Bohaumilitzky on 24.06.21.
+//  Created by David Bohaumilitzky on 22.01.22.
 //
 
 import SwiftUI
 
-struct CircleSlider: View {
+struct SmartCircleSlider: View {
     var progressColors: [Color]
 //    var secondaryColor: Color
-    var width: CGFloat = 30
-    @Binding var value: Float
+    @State var value: Float = 0
     var maxValue: CGFloat
     var size: CGFloat
     @State var progress : CGFloat = 0
@@ -23,29 +22,36 @@ struct CircleSlider: View {
         angle = Double(Angle)
         progress = CGFloat(Angle/360)
     }
-    
     var body: some View{
+        
         VStack{
             ZStack{
+                
                 Circle()
                     .trim(from: 0, to: 0.7)
-                    .stroke(Color.secondary.opacity(0.3),style: StrokeStyle(lineWidth: width, lineCap: .round, lineJoin: .round))
+                    .stroke(Color.secondary.opacity(0.3),style: StrokeStyle(lineWidth: 30, lineCap: .round, lineJoin: .round))
                     .frame(width: size, height: size)
                     .rotationEffect(Angle(degrees: 145))
                     
+
                 Circle()
                     .trim(from: 0, to: progress)
-                    .stroke(LinearGradient(colors: progressColors, startPoint: .trailing, endPoint: .leading), style: StrokeStyle(lineWidth: width, lineCap: .round))
+                    .stroke(LinearGradient(colors: progressColors, startPoint: .trailing, endPoint: .leading), style: StrokeStyle(lineWidth: 30, lineCap: .round))
                     .frame(width: size, height: size)
                     .rotationEffect(Angle(degrees: 145))
                 
                 Circle()
                     .fill(Color.white)
-                    .frame(width: width, height: width)
+                    .frame(width: 30, height: 30)
                     .offset(x: size / 2)
                     .rotationEffect(.init(degrees: angle))
+                    
                     .highPriorityGesture(DragGesture().onChanged(onDrag(value:)))
                     .rotationEffect(Angle(degrees: 145))
+                
+//                Text("$" + String(progress.description))
+//                    .font(.largeTitle)
+//                    .fontWeight(.heavy)
             }
         }
         .onAppear(perform: setup)
@@ -77,7 +83,7 @@ struct CircleSlider: View {
             // progress...
             
             let progress = angle / 360
-            if progress > 0.7{
+            if progress > 0.6{
                 self.progress = 0.7
                 self.angle = Double(252)
                 self.value = Float(maxValue)
@@ -93,8 +99,9 @@ struct CircleSlider: View {
     }
 }
 
-//struct CircleSlider_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CircleSlider()
-//    }
-//}
+
+struct SmartCircleSlider_Previews: PreviewProvider {
+    static var previews: some View {
+        SmartCircleSlider(progressColors: [.orange, .pink], maxValue: 100, size: 250)
+    }
+}

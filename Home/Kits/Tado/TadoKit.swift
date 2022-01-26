@@ -43,7 +43,6 @@ class TadoKit{
     func setTemp(device: TempDevice){
         Task{
             var queries = [URLQueryItem]()
-     
             queries.append(URLQueryItem(name: "id", value: device.id))
             queries.append(URLQueryItem(name: "type", value: device.isAC ? "COOL" : "HEAT"))
             queries.append(URLQueryItem(name: "temp", value: device.setTemp.description))
@@ -56,12 +55,23 @@ class TadoKit{
     func backToAuto(device: TempDevice){
         Task{
             var queries = [URLQueryItem]()
-            
             queries.append(URLQueryItem(name: "id", value: device.id))
             queries.append(URLQueryItem(name: "type", value: device.isAC ? "COOL" : "HEAT"))
             queries.append(URLQueryItem(name: "action", value: "mode"))
             queries.append(URLQueryItem(name: "mode", value: "auto"))
             let _ = try? await RequestManager().makeActionRequest(requestDirectory: ActionDirectories.tado, queries: queries)
         }
+    }
+    
+    func setAll(temp: Float) async{
+            var queries = [URLQueryItem]()
+            queries.append(URLQueryItem(name: "temperature", value: temp.description))
+            queries.append(URLQueryItem(name: "action", value: "setAll"))
+            let _ = try? await RequestManager().makeActionRequest(requestDirectory: ActionDirectories.tado, queries: queries)
+    }
+    func boost() async{
+        var queries = [URLQueryItem]()
+        queries.append(URLQueryItem(name: "action", value: "boost"))
+        let _ = try? await RequestManager().makeActionRequest(requestDirectory: ActionDirectories.tado, queries: queries)
     }
 }

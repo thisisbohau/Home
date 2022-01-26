@@ -27,4 +27,8 @@ class SystemUtility{
         
         return formatter.string(from: converted)
     }
+    
+    func secondsBetweenDates(start: Date, end: Date) -> Int{
+        return Int(end.timeIntervalSince(start))
+    }
 }
