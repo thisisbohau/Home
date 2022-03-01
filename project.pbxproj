@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C917433E27BF7B8300851574 /* BatteryOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917433D27BF7B8300851574 /* BatteryOverview.swift */; };
+		C917433F27BF7B8300851574 /* BatteryOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917433D27BF7B8300851574 /* BatteryOverview.swift */; };
+		C917434127BF803C00851574 /* BatteryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917434027BF803C00851574 /* BatteryManager.swift */; };
+		C917434227BF803C00851574 /* BatteryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917434027BF803C00851574 /* BatteryManager.swift */; };
 		C91A602A27024DE100E6CA1B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C91A602927024DE100E6CA1B /* FirebaseAnalytics */; };
 		C91A602C27024DE100E6CA1B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C91A602B27024DE100E6CA1B /* FirebaseAuth */; };
 		C91A602E27024DE100E6CA1B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C91A602D27024DE100E6CA1B /* FirebaseCrashlytics */; };
@@ -24,6 +28,8 @@
 		C91A604A270254D400E6CA1B /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = C91A6049270254D400E6CA1B /* FirebaseMLModelDownloader */; };
 		C91A604C270254D400E6CA1B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C91A604B270254D400E6CA1B /* FirebaseStorage */; };
 		C91A604E270254D400E6CA1B /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = C91A604D270254D400E6CA1B /* FirebaseStorageSwift-Beta */; };
+		C92FFC5227B2FFC0005E3543 /* outstandingPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FFC5127B2FFC0005E3543 /* outstandingPayment.swift */; };
+		C92FFC5327B2FFC0005E3543 /* outstandingPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FFC5127B2FFC0005E3543 /* outstandingPayment.swift */; };
 		C946C00A278A2513003F5453 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BEE9278A2512003F5453 /* MainMenu.swift */; };
 		C946C00B278A2513003F5453 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BEE9278A2512003F5453 /* MainMenu.swift */; };
 		C946C00C278A2513003F5453 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946BEEA278A2512003F5453 /* RoomView.swift */; };
@@ -321,6 +327,10 @@
 		C960F19F2695FA9900BFB2C7 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C960F19E2695FA9900BFB2C7 /* FirebaseMessaging */; };
 		C960F1A12695FA9900BFB2C7 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C960F1A02695FA9900BFB2C7 /* FirebaseRemoteConfig */; };
 		C9733B9A278A3AB6007242F7 /* HomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9733B99278A3AB6007242F7 /* HomeApp.swift */; };
+		C980D04327BC493E00712BD4 /* PaymentSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980D04227BC493E00712BD4 /* PaymentSetup.swift */; };
+		C980D04427BC493E00712BD4 /* PaymentSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C980D04227BC493E00712BD4 /* PaymentSetup.swift */; };
+		C98AA0CC27BFA7D800BEE8C5 /* StreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA0CB27BFA7D800BEE8C5 /* StreamPlayer.swift */; };
+		C98AA0CD27BFA7D800BEE8C5 /* StreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA0CB27BFA7D800BEE8C5 /* StreamPlayer.swift */; };
 		C98F99E8279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */; };
 		C98F99E9279385EC00C41DA1 /* SmartCircleGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */; };
 		C98F99EB27955B6F00C41DA1 /* DishwasherProgramSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */; };
@@ -351,6 +361,8 @@
 		C9DC1DD327ABD989001A3E2B /* ExpenseOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC1DD127ABD989001A3E2B /* ExpenseOverview.swift */; };
 		C9DC1DD527ABD9A5001A3E2B /* ExpenseSourceGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC1DD427ABD9A5001A3E2B /* ExpenseSourceGauge.swift */; };
 		C9DC1DD627ABD9A5001A3E2B /* ExpenseSourceGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC1DD427ABD9A5001A3E2B /* ExpenseSourceGauge.swift */; };
+		C9DF2E9627CCB7AE00BB0B76 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF2E9527CCB7AE00BB0B76 /* PaymentView.swift */; };
+		C9DF2E9727CCB7B200BB0B76 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF2E9527CCB7AE00BB0B76 /* PaymentView.swift */; };
 		C9E1644226826DEF0060FE61 /* ColorPickerRing in Frameworks */ = {isa = PBXBuildFile; productRef = C9E1644126826DEF0060FE61 /* ColorPickerRing */; };
 		C9FF8A8B27936B9700421F28 /* DishwasherOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */; };
 		C9FF8A8C27936B9700421F28 /* DishwasherOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */; };
@@ -378,6 +390,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C917433D27BF7B8300851574 /* BatteryOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryOverview.swift; sourceTree = "<group>"; };
+		C917434027BF803C00851574 /* BatteryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryManager.swift; sourceTree = "<group>"; };
+		C92FFC5127B2FFC0005E3543 /* outstandingPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outstandingPayment.swift; sourceTree = "<group>"; };
 		C946BEE9278A2512003F5453 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		C946BEEA278A2512003F5453 /* RoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		C946BEEB278A2512003F5453 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -532,6 +547,8 @@
 		C95DB20C2632F4000054731F /* iOSHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSHome.entitlements; sourceTree = "<group>"; };
 		C95DB20D2632F4040054731F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		C9733B99278A3AB6007242F7 /* HomeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApp.swift; sourceTree = "<group>"; };
+		C980D04227BC493E00712BD4 /* PaymentSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSetup.swift; sourceTree = "<group>"; };
+		C98AA0CB27BFA7D800BEE8C5 /* StreamPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayer.swift; sourceTree = "<group>"; };
 		C98F99E7279385EC00C41DA1 /* SmartCircleGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCircleGauge.swift; sourceTree = "<group>"; };
 		C98F99EA27955B6F00C41DA1 /* DishwasherProgramSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherProgramSelector.swift; sourceTree = "<group>"; };
 		C9910919267A926800261BB1 /* HomeTV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeTV.entitlements; sourceTree = "<group>"; };
@@ -556,6 +573,7 @@
 		C9DC1DCE27ABD528001A3E2B /* MainControlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControlList.swift; sourceTree = "<group>"; };
 		C9DC1DD127ABD989001A3E2B /* ExpenseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverview.swift; sourceTree = "<group>"; };
 		C9DC1DD427ABD9A5001A3E2B /* ExpenseSourceGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSourceGauge.swift; sourceTree = "<group>"; };
+		C9DF2E9527CCB7AE00BB0B76 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		C9FF8A8A27936B9700421F28 /* DishwasherOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherOverview.swift; sourceTree = "<group>"; };
 		C9FF8A8D27936C7200421F28 /* DishwasherKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherKit.swift; sourceTree = "<group>"; };
 		C9FF8A90279375A500421F28 /* DishwasherStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishwasherStatus.swift; sourceTree = "<group>"; };
@@ -627,9 +645,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C917433C27BF7B6D00851574 /* BatteryManager */ = {
+			isa = PBXGroup;
+			children = (
+				C917433D27BF7B8300851574 /* BatteryOverview.swift */,
+				C917434027BF803C00851574 /* BatteryManager.swift */,
+			);
+			path = BatteryManager;
+			sourceTree = "<group>";
+		};
 		C946BEE7278A2512003F5453 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C917433C27BF7B6D00851574 /* BatteryManager */,
 				C9B99EE727A48BB4007B3E16 /* ExpenseManager */,
 				C946BFAB278A2512003F5453 /* LocationControl */,
 				C946BF7B278A2512003F5453 /* AccessoryControl */,
@@ -666,6 +694,7 @@
 				C946BFD5278A2512003F5453 /* SF-Mono-LightItalic.otf */,
 				C946BFD9278A2512003F5453 /* ProjectBlue */,
 				C946BFEF278A2512003F5453 /* Info.plist */,
+				C98AA0CB27BFA7D800BEE8C5 /* StreamPlayer.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1167,6 +1196,9 @@
 				C9DC1DCB27AB28FB001A3E2B /* ExpenseDetail.swift */,
 				C9DC1DD127ABD989001A3E2B /* ExpenseOverview.swift */,
 				C9DC1DD427ABD9A5001A3E2B /* ExpenseSourceGauge.swift */,
+				C92FFC5127B2FFC0005E3543 /* outstandingPayment.swift */,
+				C980D04227BC493E00712BD4 /* PaymentSetup.swift */,
+				C9DF2E9527CCB7AE00BB0B76 /* PaymentView.swift */,
 			);
 			path = ExpenseManager;
 			sourceTree = "<group>";
@@ -1439,6 +1471,7 @@
 				C946C136278A2513003F5453 /* MorningView.swift in Sources */,
 				C946C014278A2513003F5453 /* MainView.swift in Sources */,
 				C946C140278A2513003F5453 /* WakeUpSetup.swift in Sources */,
+				C9DF2E9627CCB7AE00BB0B76 /* PaymentView.swift in Sources */,
 				C946C0E6278A2513003F5453 /* ActionRecommendation.swift in Sources */,
 				C946C094278A2513003F5453 /* LockdownActive.swift in Sources */,
 				C946C1A0278A2513003F5453 /* PowerOutage.swift in Sources */,
@@ -1475,6 +1508,7 @@
 				C946C090278A2513003F5453 /* LockdownKit.swift in Sources */,
 				C946C088278A2513003F5453 /* NukiKit.swift in Sources */,
 				C946C060278A2513003F5453 /* SceneEditAccessories.swift in Sources */,
+				C92FFC5227B2FFC0005E3543 /* outstandingPayment.swift in Sources */,
 				C946C1CC278A2513003F5453 /* CalendarAccess.swift in Sources */,
 				C946C10A278A2513003F5453 /* ServerSetup.swift in Sources */,
 				C946C0F2278A2513003F5453 /* Timer.swift in Sources */,
@@ -1499,6 +1533,7 @@
 				C946C0C4278A2513003F5453 /* Pool.swift in Sources */,
 				C946C0FC278A2513003F5453 /* TadoOverview.swift in Sources */,
 				C946C070278A2513003F5453 /* SceneKit.swift in Sources */,
+				C917433E27BF7B8300851574 /* BatteryOverview.swift in Sources */,
 				C946C012278A2513003F5453 /* Settings.swift in Sources */,
 				C946C0F6278A2513003F5453 /* AccessoryDetailBlinds.swift in Sources */,
 				C946C1D0278A2513003F5453 /* CalendarSettings.swift in Sources */,
@@ -1519,6 +1554,7 @@
 				C946C1CA278A2513003F5453 /* calendarEntry.swift in Sources */,
 				C946C050278A2513003F5453 /* PowerDetail.swift in Sources */,
 				C946C00E278A2513003F5453 /* HomeView.swift in Sources */,
+				C917434127BF803C00851574 /* BatteryManager.swift in Sources */,
 				C946C0C2278A2513003F5453 /* sentryKit.swift in Sources */,
 				C946C068278A2513003F5453 /* SceneBlindControl.swift in Sources */,
 				C946C1BC278A2513003F5453 /* SwitchKit.swift in Sources */,
@@ -1529,6 +1565,7 @@
 				C946C072278A2513003F5453 /* NewScene.swift in Sources */,
 				C946C1C2278A2513003F5453 /* ColorWheel.swift in Sources */,
 				C946C064278A2513003F5453 /* SceneSchedule.swift in Sources */,
+				C98AA0CC27BFA7D800BEE8C5 /* StreamPlayer.swift in Sources */,
 				C946C146278A2513003F5453 /* LocationManager.swift in Sources */,
 				C946C13A278A2513003F5453 /* locationLookup.swift in Sources */,
 				C946C0D2278A2513003F5453 /* AccessKit.swift in Sources */,
@@ -1561,6 +1598,7 @@
 				C946C09C278A2513003F5453 /* IrrigationRoom.swift in Sources */,
 				C9B99EF527A5D3F9007B3E16 /* ExpenseSource.swift in Sources */,
 				C946C122278A2513003F5453 /* NFC.swift in Sources */,
+				C980D04327BC493E00712BD4 /* PaymentSetup.swift in Sources */,
 				C946C086278A2513003F5453 /* GarageKit.swift in Sources */,
 				C946C17A278A2513003F5453 /* HomeModel.swift in Sources */,
 				C946C04A278A2513003F5453 /* Setetings.swift in Sources */,
@@ -1617,6 +1655,7 @@
 				C946C10F278A2513003F5453 /* NetworkMonitor.swift in Sources */,
 				C946C07D278A2513003F5453 /* ColorPicker.swift in Sources */,
 				C946C0C5278A2513003F5453 /* Pool.swift in Sources */,
+				C917433F27BF7B8300851574 /* BatteryOverview.swift in Sources */,
 				C946C05D278A2513003F5453 /* SceneEditScene.swift in Sources */,
 				C946C145278A2513003F5453 /* LocationSettings.swift in Sources */,
 				C9B99EF627A5D3F9007B3E16 /* ExpenseSource.swift in Sources */,
@@ -1655,7 +1694,9 @@
 				C946C00B278A2513003F5453 /* MainMenu.swift in Sources */,
 				C946C1CF278A2513003F5453 /* CalendarList.swift in Sources */,
 				C946C0F3278A2513003F5453 /* Timer.swift in Sources */,
+				C9DF2E9727CCB7B200BB0B76 /* PaymentView.swift in Sources */,
 				C946C0E7278A2513003F5453 /* ActionRecommendation.swift in Sources */,
+				C980D04427BC493E00712BD4 /* PaymentSetup.swift in Sources */,
 				C946C0C3278A2513003F5453 /* sentryKit.swift in Sources */,
 				C946C0E5278A2513003F5453 /* MainControl.swift in Sources */,
 				C9FF8A8C27936B9700421F28 /* DishwasherOverview.swift in Sources */,
@@ -1664,6 +1705,7 @@
 				C946C073278A2513003F5453 /* NewScene.swift in Sources */,
 				C946C0B5278A2513003F5453 /* Rooms.swift in Sources */,
 				C9B99EF327A5D37B007B3E16 /* ExpenseSummary.swift in Sources */,
+				C917434227BF803C00851574 /* BatteryManager.swift in Sources */,
 				C9B99EED27A48F52007B3E16 /* NewExpense.swift in Sources */,
 				C946C0BB278A2513003F5453 /* MowerOverview.swift in Sources */,
 				C946C0BD278A2513003F5453 /* MowerKit.swift in Sources */,
@@ -1688,6 +1730,7 @@
 				C946C0AD278A2513003F5453 /* Weather.swift in Sources */,
 				C946C1D1278A2513003F5453 /* CalendarSettings.swift in Sources */,
 				C9DC1DD327ABD989001A3E2B /* ExpenseOverview.swift in Sources */,
+				C98AA0CD27BFA7D800BEE8C5 /* StreamPlayer.swift in Sources */,
 				C946C115278A2513003F5453 /* UIControls.swift in Sources */,
 				C946C055278A2513003F5453 /* DogModeOverview.swift in Sources */,
 				C946C089278A2513003F5453 /* NukiKit.swift in Sources */,
@@ -1706,6 +1749,7 @@
 				C946C07B278A2513003F5453 /* LightKit.swift in Sources */,
 				C946C19D278A2513003F5453 /* NotificationList.swift in Sources */,
 				C946C0A7278A2513003F5453 /* WeatherKit.swift in Sources */,
+				C92FFC5327B2FFC0005E3543 /* outstandingPayment.swift in Sources */,
 				C946C08D278A2513003F5453 /* TadoKit.swift in Sources */,
 				C946C0CF278A2513003F5453 /* LeaveButton.swift in Sources */,
 				C946C139278A2513003F5453 /* WakeUpSettings.swift in Sources */,
@@ -1943,7 +1987,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2022003;
+				CURRENT_PROJECT_VERSION = 2022008;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
@@ -1970,7 +2014,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSHome/iOSHome.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2022003;
+				CURRENT_PROJECT_VERSION = 2022008;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSHome/Preview Content\"";
 				DEVELOPMENT_TEAM = YWD3GLUA8L;
 				ENABLE_PREVIEWS = YES;
